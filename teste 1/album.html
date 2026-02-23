@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Álbum</title>
+  <link rel="stylesheet" href="css/book.css">
+</head>
+<body>
 
+<input type="file" id="imagem">
+<input id="titulo" placeholder="Título">
+<input id="descricao" placeholder="Descrição">
+<input id="data" type="date">
+<button onclick="addFoto()">Adicionar Foto</button>
+
+<button onclick="virar()">Virar Página</button>
+
+<div class="book" id="book"></div>
+
+<script src="js/storage.js"></script>
+<script src="js/book.js"></script>
+</body>
+</html>
