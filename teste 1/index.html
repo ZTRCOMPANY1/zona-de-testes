@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro Governamental de Avaliação</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body{
+    margin:0;
+    background:black;
+    color:#00ff88;
+    font-family:'Share Tech Mono', monospace;
+}
+
+header{
+    text-align:center;
+    padding:20px;
+    font-size:24px;
+    border-bottom:1px solid #00ff88;
+    text-shadow:0 0 10px #00ff88;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:20px;
+}
+
+.question{
+    margin-bottom:25px;
+    padding:15px;
+    border:1px solid #00ff88;
+    border-radius:10px;
+}
+
+button{
+    background:#00ff88;
+    color:black;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+    margin-top:10px;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+button:hover{
+    background:white;
+}
+
+#resultBox{
+    margin-top:30px;
+    padding:20px;
+    border:2px solid #00ff88;
+    text-align:center;
+    font-size:18px;
+    display:none;
+}
+
+.access{
+    font-size:26px;
+    margin-top:15px;
+    text-shadow:0 0 15px red;
+}
+</style>
+</head>
+
+<body>
+
+<header>🔐 CENTRO GOVERNAMENTAL DE AVALIAÇÃO 🔐</header>
+
+<div class="container">
+
+<div class="question">
+<p>1️⃣ Você encontra informações confidenciais. O que faz?</p>
+<button onclick="addScore(1)">Ignoro</button>
+<button onclick="addScore(3)">Entrego às autoridades</button>
+<button onclick="addScore(5)">Analiso antes de decidir</button>
+</div>
+
+<div class="question">
+<p>2️⃣ Em situação de risco extremo você:</p>
+<button onclick="addScore(2)">Prioriza sua segurança</button>
+<button onclick="addScore(4)">Protege os outros</button>
+<button onclick="addScore(6)">Toma controle da situação</button>
+</div>
+
+<div class="question">
+<p>3️⃣ Você trabalha melhor:</p>
+<button onclick="addScore(2)">Sozinho</button>
+<button onclick="addScore(3)">Em equipe</button>
+<button onclick="addScore(5)">Liderando</button>
+</div>
+
+<div class="question">
+<p>4️⃣ Se precisar tomar uma decisão difícil:</p>
+<button onclick="addScore(3)">Segue regras</button>
+<button onclick="addScore(5)">Segue lógica</button>
+<button onclick="addScore(7)">Segue instinto estratégico</button>
+</div>
+
+<button onclick="finalResult()">FINALIZAR AVALIAÇÃO</button>
+
+<div id="resultBox">
+<p>🔎 PROCESSANDO DADOS...</p>
+<div class="access" id="accessLevel"></div>
+</div>
+
+</div>
+
+<script>
+let totalScore = 0;
+
+function addScore(value){
+    totalScore += value;
+}
+
+function finalResult(){
+    let level = "";
+    let resultBox = document.getElementById("resultBox");
+    let access = document.getElementById("accessLevel");
+
+    if(totalScore <= 8){
+        level = "CIVIL";
+    }
+    else if(totalScore <= 14){
+        level = "AGENTE";
+    }
+    else if(totalScore <= 20){
+        level = "ELITE";
+    }
+    else{
+        level = "OMEGA";
+    }
+
+    resultBox.style.display="block";
+    access.textContent = "NÍVEL DE ACESSO: " + level;
+}
+</script>
+
+</body>
+</html>
