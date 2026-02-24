@@ -1,1 +1,26 @@
+body{
+  background:#d2b48c;
+}
 
+.book{
+  width:900px;
+  height:600px;
+  margin:auto;
+  perspective:2000px;
+  position:relative;
+}
+
+.page{
+  width:50%;
+  height:100%;
+  background:white;
+  position:absolute;
+  transform-origin:left;
+  transition:1s;
+  box-shadow:0 0 10px rgba(0,0,0,.4);
+  padding:20px;
+}
+
+.page.flip{
+  transform:rotateY(-180deg);
+}
