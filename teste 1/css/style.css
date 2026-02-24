@@ -1,2 +1,161 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-
+/* FUNDO GERAL */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c9a76d, #8b6b3e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+/* CONTAINER PADRÃO */
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* TÍTULOS */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #5a3e1b;
+}
+
+/* INPUTS */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* BOTÕES */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #8b6b3e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #6f532f;
+}
+
+/* LINKS */
+a {
+  color: #8b6b3e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* TEXTO AUXILIAR */
+p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* LISTA DE ÁLBUNS */
+#lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* CARD DO ÁLBUM */
+.card {
+  background: #f7f3ed;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #5a3e1b;
+  margin-bottom: 5px;
+}
+
+/* PÁGINA DO ÁLBUM (BOOK PAGE) */
+.album-page {
+  width: 100%;
+  max-width: 1200px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* BOTÃO VIRAR PÁGINA */
+.turn-button {
+  width: auto;
+  padding: 10px 20px;
+  margin: 15px;
+}
+
+/* IMAGENS NAS PÁGINAS */
+.page img {
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* TEXTO DA PÁGINA */
+.page h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.page p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.page small {
+  color: #777;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .book {
+    width: 100%;
+    height: 450px;
+  }
+
+  .page {
+    padding: 10px;
+  }
+}
